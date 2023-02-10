@@ -1,0 +1,177 @@
+
+html {
+    background: grey;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #1F2937;
+    margin: 0;
+    padding: 0 45px;
+    border-radius: 10px;
+    width: 550px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 2px 10px;
+}
+
+.btn-selecter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.setting-container {
+    margin: 0 20px 30px 0;
+}
+
+#toggle-switch {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+
+label[for="toggle-switch"]  {
+    width: 40px;
+    height: 20px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    display: block;
+    background: #ebebeb;
+    border-radius: 25px;
+    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.4), inset 0 -5px 15px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+label[for="toggle-switch"]:after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, #ffcc89, #d8860b);
+    border-radius: 50%;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+#toggle-switch:checked + label[for="toggle-switch"]  {
+    background: #242424;
+}
+
+#toggle-switch:checked + label[for="toggle-switch"]:after {
+    background: linear-gradient(180deg, #777, #3a3a3a);
+    left: calc(100% - 20px);
+}
+
+
+label[for="toggle-switch"]:active:after {
+    width: 25px;
+}
+
+
+
+.title {
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 40px;
+    line-height:a 40px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+#sub-title {
+    color: #D5D4D8;
+    font-size: 20px;
+    line-height: 28px;
+    margin: 0;
+    margin-top: 15px;
+}
+
+.numbers, .symbols {
+    color: #D5D4D8;
+}
+
+.setting-numbers, .setting-symbols {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between
+}
+
+h4 {
+    color: #D5D4D8;
+    
+}
+
+span {
+    color: #4ADF86;
+    display: block;
+}
+
+
+#btn {
+    background-color: #10B981;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+.pwd-length {
+    color: whitesmoke;
+}
+
+#pwd-length-bar {
+    width: 170px;
+}
+
+#border {
+    border-top: 1px solid #c29861;
+    display: flex;
+    justify-content: space-between;
+}
+
+.result-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding-left: 10px;
+    color: #55F991;
+    background-color: #273549;
+    border: none;
+    border-radius: 5px;
+    width: 211px;
+    height: 39px;
+    text-align: center;
+    height: 39px;
+    line-height: 39px;   
+}
+
+#password-one, #password-two {
+    display: inline;
+    text-align: center;
+    font-size: 14.1px;
+}
+
+#copy-password-one, #copy-password-two {
+    background-color: #273549;
+    border: none;
+}
