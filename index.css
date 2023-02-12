@@ -39,7 +39,7 @@ body {
     right: 40px;
 }
 
-label[for="toggle-switch"]  {
+label.toggle  {
     width: 40px;
     height: 20px;
     position: absolute;
@@ -53,7 +53,7 @@ label[for="toggle-switch"]  {
     transition: 0.3s;
 }
 
-label[for="toggle-switch"]:after {
+label.toggle:after {
     content: "";
     width: 20px;
     height: 20px;
@@ -66,17 +66,17 @@ label[for="toggle-switch"]:after {
     transition: 0.3s;
 }
 
-#toggle-switch:checked + label[for="toggle-switch"]  {
+#toggle-switch:checked + label.toggle  {
     background: #242424;
 }
 
-#toggle-switch:checked + label[for="toggle-switch"]:after {
+#toggle-switch:checked + label.toggle:after {
     background: linear-gradient(180deg, #777, #3a3a3a);
     left: calc(100% - 20px);
 }
 
 
-label[for="toggle-switch"]:active:after {
+label.toggle:active:after {
     width: 25px;
 }
 

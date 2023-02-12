@@ -21,15 +21,21 @@ inputRange.addEventListener('input', function() {
 
 generateBtn.addEventListener("click", function() {
     let password = characters;
-    if (includeNumbers.checked) password = password.concat(numbers);
-    if (includeSymbols.checked) password = password.concat(symbols);
+    if (includeNumbers.checked) password = [...password, ...numbers];
+    if (includeSymbols.checked) password = [...password, ...symbols];
     passwordOne.textContent = "";
     passwordTwo.textContent = "";
+
+    let pw1 = ''
+    let pw2 = ''
+
     for (let i = 0; i < passwordLengthBar.value; i++) {
         let randomCharactersOne = Math.floor(Math.random() * password.length)
         let randomCharactersTwo = Math.floor(Math.random() * password.length)
-        passwordOne.textContent += password[randomCharactersOne]
-        passwordTwo.textContent += password[randomCharactersTwo]
+        pw1 += password[randomCharactersOne]
+        pw2 += password[randomCharactersTwo]
+        passwordOne.textContent = pw1;
+        passwordTwo.textContent = pw2;
     }
 })
 
