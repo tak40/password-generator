@@ -1,4 +1,4 @@
-# co30847f0888bc20cf026afc1
+# Password Generator
 
 Quick start:
 
