@@ -1,21 +1,45 @@
 # Password Generator
 
-Quick start:
+## Table of Contents
 
-```
-$ npm install
-$ npm start
-````
+1. [Overview](#overview)
+2. [Requirements](#requirements)
+3. [Stretch Goals](#stretch-goals)
+4. [Figma File](#figma-file)
+5. [Personal Stretch Goals](#personal-stretch-goals)
+6. [What I Learned](#what-i-learned) <!-- You can add this later -->
 
-Head over to https://vitejs.dev/ to learn more about using vite
-## About Scrimba
+---
 
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
+## Overview
 
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
+This is a solo project as part of the Scrimba Frontend Career Path Module 3. The primary aim of the project is to create a Random Password Generator.
 
-Happy Coding!
+---
+
+## Requirements
+
+- Build it from scratch 
+- Generate two random passwords when the user clicks the button
+- Each password should be 15 characters long
+
+---
+
+## Stretch Goals
+
+- Ability to set password length 
+- Add "copy-on-click" functionality
+- Toggle "symbols" and "numbers" on/off 
+
+---
+
+## Figma File
+
+Design templates and inspiration for the project are based on the [Scrimba presented Figma File](https://www.figma.com/file/NEj9JDycMjF3XKXq7swoc9/Random-Password-Generator-(New-version)?node-id=0%3A1&mode=dev).
+
+---
+
+## Personal Stretch Goals
+
+- Implement a toggle switch for light/dark mode 
+- UI enhancements
