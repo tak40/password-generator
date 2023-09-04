@@ -35,11 +35,28 @@ body {
 
 .setting-container {
     margin: 0 20px 30px 0;
+    /* outline: 1px solid #c29861; */
 }
 
 #toggle-switch {
     display: none;
     position: absolute;
+}
+
+.toggle:hover {
+    cursor: pointer;
+    transform: scale(1.25);
+    transition: transform 0.3s ease-in-out;
+}
+
+.toggle:active {
+    outline: 2px solid #007BFF;
+}
+
+.toggle:focus {
+    outline: 2px solid #007BFF;
+    border-radius: 5px;
+    outline-offset: 2px;
 }
 
 label.toggle  {
@@ -106,14 +123,31 @@ h1 {
 
 .numbers, 
 .symbols {
+    font-size: 1rem;
     color: #D5D4D8;
 }
 
 .setting-numbers, 
 .setting-symbols {
-    margin-top: 10px;
+    margin-top: 0.25em;
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+    line-height: 1.6;
+}
+
+.checkbox {
+    width: 1.25em;
+}
+
+.checkbox:hover {
+    cursor: pointer;
+}
+
+.checkbox:active,
+.checkbox:focus {
+    outline: 2px solid #c29861;
+    outline-offset: 2px;
+    border-radius: 5px;
 }
 
 h4 {
@@ -140,11 +174,26 @@ span {
 
 .pwd-length {
     color: whitesmoke;
+    margin-bottom: 0.35em;
 }
 
 #pwd-length-bar {
-    width: 170px;
+    width: 10em;
 }
+
+#pwd-length-bar:hover {
+    cursor: pointer;
+}
+
+#pwd-length-bar:active,
+#pwd-length-bar:focus {
+    outline: 2px solid #c29861;
+    border-radius: 5px;
+    outline-offset: 2px;
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
 
 #border {
     border-top: 1px solid #c29861;
@@ -183,11 +232,16 @@ span {
     margin-right: 5px;
 }
 
-#btn:hover, 
+#btn:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
 #copy-password-one:hover, 
 #copy-password-two:hover {
     cursor: pointer;
-    transform: scale(1.05);
+    transform: scale(1.15);
     transition: transform 0.3s ease-in-out;
 }
 

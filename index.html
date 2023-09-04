@@ -13,27 +13,29 @@
     </head>
     <body>
         <header>
-            <input id="toggle-switch" type="checkbox" id="switch"/>
-            <label for="toggle-switch" class="toggle">
-                <svg 
-                    src="moon-svgrepo-com.svg" 
-                    class="moon" 
-                    width="40px" 
-                    height="40px" 
-                    viewBox="0 0 24 24"  
-                    fill="none" 
-                    xmlns="http://www.w3.org/2000/svg">
-                </svg>
-                <svg 
-                    src="sun-svgrepo-com.svg" 
-                    class="sun" 
-                    width="40px" 
-                    height="40px" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    xmlns="http://www.w3.org/2000/svg">
-                </svg>
-            </label>
+            <div class="toggle-switch-container">
+                <input id="toggle-switch" type="checkbox" id="switch"/>
+                <label for="toggle-switch" class="toggle">
+                    <svg 
+                        src="moon-svgrepo-com.svg" 
+                        class="moon" 
+                        width="40px" 
+                        height="40px" 
+                        viewBox="0 0 24 24"  
+                        fill="none" 
+                        xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+                    <svg 
+                        src="sun-svgrepo-com.svg" 
+                        class="sun" 
+                        width="40px" 
+                        height="40px" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+                </label>
+            </div>
         </header>
         <main>
             <div class="title">
@@ -49,16 +51,15 @@
                 <div class="setting-container">
                     <div class="setting">
                         <p class="pwd-length">Password Length</p>
-                        <span></span>
-                        <input id="pwd-length-bar" type="range" min="1" max="20" value="15" step="1">
+                        <input id="pwd-length-bar" class="pwd-length-bar" type="range" min="1" max="20" value="15" step="1">
                     </div>
                     <div class="setting setting-numbers">
                         <label class="numbers" for="numbers">Include numbers</label>
-                        <input type="checkbox" id="numbers" checked />
+                        <input type="checkbox" id="numbers" class="checkbox" checked />
                     </div>
                     <div class="setting setting-symbols">
                         <label class="symbols" for="symbols">Include symbols</label>
-                        <input type="checkbox" id="symbols" checked />
+                        <input type="checkbox" id="symbols" class="checkbox" checked />
                     </div>
                 </div>
             </div>
