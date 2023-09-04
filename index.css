@@ -96,7 +96,7 @@ h1 {
     margin: 0;
 }
 
-#sub-title {
+.sub-title {
     color: #D5D4D8;
     font-size: 20px;
     line-height: 28px;
@@ -180,6 +180,30 @@ span {
 #copy-password-two {
     background-color: #273549;
     border: none;
+    margin-right: 5px;
+}
+
+#btn:hover, 
+#copy-password-one:hover, 
+#copy-password-two:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+#btn:active, 
+#copy-password-one:active, 
+#copy-password-two:active {
+  transform: scale(0.95);
+  transition: transform 0.3s ease-in-out;
+}
+
+#btn:focus, 
+#copy-password-one:focus, 
+#copy-password-two:focus  {
+    outline: 2px solid #007BFF;
+    border-radius: 5px;
+    outline-offset: 2px;
 }
 
 /* ----- FOOTER ----- */
