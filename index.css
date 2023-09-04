@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    /* outline: 0.5px dotted red */
 }
 
 html {
@@ -82,13 +83,12 @@ label.toggle:active:after {
     width: 25px;
 }
 
-
-
 .title {
     margin-bottom: 25px;
 }
 
 h1 {
+    font-family: 'Karla', sans-serif;
     font-weight: bold;
     font-size: 40px;
     line-height:a 40px;
@@ -180,4 +180,14 @@ span {
 #copy-password-two {
     background-color: #273549;
     border: none;
+}
+
+/* ----- FOOTER ----- */
+
+footer {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.125rem;
+    margin-top: 1.125rem;
+    text-align: center;
+    color: #c29861;
 }
