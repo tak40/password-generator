@@ -12,67 +12,74 @@
         <title>Password Generator</title>
     </head>
     <body>
-        <input id="toggle-switch" type="checkbox" id="switch"/>
-        <label for="toggle-switch" class="toggle">
-            <svg 
-                src="moon-svgrepo-com.svg" 
-                class="moon" 
-                width="40px" 
-                height="40px" 
-                viewBox="0 0 24 24"  
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg">
-            </svg>
-            <svg 
-                src="sun-svgrepo-com.svg" 
-                class="sun" 
-                width="40px" 
-                height="40px" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg">
-            </svg>
-        </label>
-        <div class="title">
-            <h1>
-                Generate a <span>random password</span>
-            </h1>
-            <p id="sub-title">Never use an insecure password again.</p>
-        </div>
-        <div class="btn-selecter-container">
-            <div class="btn-container">
-                <button id="btn">Generate Password</button>
+        <header>
+            <input id="toggle-switch" type="checkbox" id="switch"/>
+            <label for="toggle-switch" class="toggle">
+                <svg 
+                    src="moon-svgrepo-com.svg" 
+                    class="moon" 
+                    width="40px" 
+                    height="40px" 
+                    viewBox="0 0 24 24"  
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg">
+                </svg>
+                <svg 
+                    src="sun-svgrepo-com.svg" 
+                    class="sun" 
+                    width="40px" 
+                    height="40px" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg">
+                </svg>
+            </label>
+        </header>
+        <main>
+            <div class="title">
+                <h1>
+                    Generate a <span>random password</span>
+                </h1>
+                <p id="sub-title">Never use an insecure password again.</p>
             </div>
-            <div class="setting-container">
-                <div class="setting">
-                    <p class="pwd-length">Password Length</p>
-                    <span></span>
-                    <input id="pwd-length-bar" type="range" min="1" max="20" value="15" step="1">
+            <div class="btn-selecter-container">
+                <div class="btn-container">
+                    <button id="btn">Generate Password</button>
                 </div>
-                <div class="setting setting-numbers">
-                    <label class="numbers" for="numbers">Include numbers</label>
-                    <input type="checkbox" id="numbers" checked />
+                <div class="setting-container">
+                    <div class="setting">
+                        <p class="pwd-length">Password Length</p>
+                        <span></span>
+                        <input id="pwd-length-bar" type="range" min="1" max="20" value="15" step="1">
+                    </div>
+                    <div class="setting setting-numbers">
+                        <label class="numbers" for="numbers">Include numbers</label>
+                        <input type="checkbox" id="numbers" checked />
+                    </div>
+                    <div class="setting setting-symbols">
+                        <label class="symbols" for="symbols">Include symbols</label>
+                        <input type="checkbox" id="symbols" checked />
+                    </div>
                 </div>
-                <div class="setting setting-symbols">
-                    <label class="symbols" for="symbols">Include symbols</label>
-                    <input type="checkbox" id="symbols" checked />
+            </div>
+            <div id="border">
+                <div class="result-container">
+                    <p id="password-one"></p>
+                    <button id="copy-password-one">
+                        <span class="material-symbols-rounded">&#xE14D;</span>
+                    </button>
+                </div>
+                <div class="result-container">
+                    <p id="password-two"></p>
+                    <button id="copy-password-two">
+                        <span class="material-symbols-rounded">&#xE14D;</span>
+                    </button>
                 </div>
             </div>
-        </div>
-        <div id="border">
-            <div class="result-container">
-                <p id="password-one"></p>
-                <button id="copy-password-one">
-                    <span class="material-symbols-rounded">&#xE14D;</span>
-                </button>
-            </div>
-            <div class="result-container">
-                <p id="password-two"></p>
-                <button id="copy-password-two">
-                    <span class="material-symbols-rounded">&#xE14D;</span>
-                </button>
-            </div>
-        </div>
+        </main>
+        <footer>
+            <p>Developed by TK</p>
+        </footer>
         <script src="index.js"></script>
     </body>
 </html>
