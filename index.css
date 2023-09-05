@@ -38,67 +38,76 @@ body {
     /* outline: 1px solid #c29861; */
 }
 
+/* Hidden checkbox input */
 #toggle-switch {
     display: none;
     position: absolute;
 }
 
-.toggle:hover {
-    cursor: pointer;
-    transform: scale(1.25);
-    transition: transform 0.3s ease-in-out;
-}
-
-.toggle:active {
-    outline: 2px solid #007BFF;
-}
-
-.toggle:focus {
-    outline: 2px solid #007BFF;
-    border-radius: 5px;
-    outline-offset: 2px;
-}
-
-label.toggle  {
-    width: 40px;
-    height: 20px;
+/* Toggle switch styles */
+.toggle {
+    display: block;
     position: absolute;
     top: 40px;
     right: 40px;
-    display: block;
+    width: 40px;
+    height: 20px;
     background: #ebebeb;
     border-radius: 25px;
     box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.4), inset 0 -5px 15px rgba(255, 255, 255, 0.4);
-    cursor: pointer;
     transition: background 0.3s ease-in-out;
 }
 
-label.toggle:after {
+/* Inner circle */
+.toggle::after {
     content: "";
-    width: 20px;
-    height: 20px;
     position: absolute;
     top: 0;
     left: 0;
+    width: 20px;
+    height: 20px;
     background: linear-gradient(180deg, #ffcc89, #d8860b);
     border-radius: 50%;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     transition: left 0.3s ease-in-out, background 0.3s ease-in-out;
 }
 
-#toggle-switch:checked + label.toggle  {
+/* Toggle switch styles when checked */
+#toggle-switch:checked + .toggle {
     background: #242424;
 }
 
-#toggle-switch:checked + label.toggle:after {
-    background: linear-gradient(180deg, #777, #3a3a3a);
+#toggle-switch:checked + .toggle::after {
     left: calc(100% - 20px);
+    background: linear-gradient(180deg, #777, #3a3a3a);
 }
 
+/* Hover states */
+.toggle:hover {
+    cursor: pointer;
+    transform: scale(1.25);
+    transition: transform 0.3s ease-in-out;
+}
 
-label.toggle:active:after {
+/* Focus and active states */
+.toggle:focus {
+    outline: 2px solid #007BFF;
+    border-radius: 5px;
+    outline-offset: 2px;
+}
+
+.toggle:active {
+    outline: 2px solid #007BFF;
+}
+
+.toggle:active::after {
     width: 25px;
+    height: 25px;
+    top: -2.5px;  /* Move up by half the additional height */
+    left: -2.5px; /* Move left by half the additional width */
 }
+
+
 
 .title {
     margin-bottom: 25px;
