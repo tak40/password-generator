@@ -39,34 +39,6 @@ generateBtn.addEventListener("click", function() {
     }
 })
 
-const switchEl = document.querySelector('input[type="checkbox"]:not(.setting)');
-
-switchEl.addEventListener('change', function() {
-  if (this.checked) {
-    document.body.style.backgroundColor = '#ECFDF5';
-    document.querySelector('h1').style.color = '#2B283A';
-    document.querySelector('span').style.color = '#10B981';
-    document.querySelector('#sub-title').style.color = '#6B7280';
-    document.querySelector('#password-one').style.color = '#5DEF92';
-    document.querySelector('#password-two').style.color = '#5DEF92';
-    document.querySelector('.pwd-length').style.color = '#6B7280';
-    document.querySelector('.numbers').style.color = '#6B7280';
-    document.querySelector('.symbols').style.color = '#6B7280';
-    document.querySelector('#border').style.color = '#2F3E53';
-  } else {
-    document.body.style.backgroundColor = '#1F2937';
-    document.querySelector('h1').style.color = '#FFFFFF';
-    document.querySelector('span').style.color = '#4ADF86';
-    document.querySelector('#sub-title').style.color = '#D5D4D8';
-    document.querySelector('#password-one').style.color = '#55F991';
-    document.querySelector('#password-two').style.color = '#55F991';
-    document.querySelector('.pwd-length').style.color = '#D5D4D8';
-    document.querySelector('.numbers').style.color = '#D5D4D8';
-    document.querySelector('.symbols').style.color = '#D5D4D8';
-    document.querySelector('#border').style.color = '#c29861';
-  }
-});
-
 document.getElementById("copy-password-one").addEventListener("click", function() {
   let password = document.getElementById("password-one").innerText;
   let textArea = document.createElement("textarea");
@@ -86,3 +58,19 @@ document.getElementById("copy-password-two").addEventListener("click", function(
   document.execCommand("copy");
   document.body.removeChild(textArea);
 });
+
+
+// TOGGLE SWITCH FOR DARK MODE
+
+const toggleSwitch = document.getElementById('toggle-switch')
+
+toggleSwitch.addEventListener('change', function() {
+  if (toggleSwitch.checked) {
+      document.body.classList.add('light-theme')
+      document.body.classList.remove('dark-theme')
+  } else {
+      document.body.classList.add('dark-theme')
+      document.body.classList.remove('light-theme')
+  }
+})
+
