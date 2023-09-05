@@ -7,7 +7,6 @@
 3. [Stretch Goals](#stretch-goals)
 4. [Figma File](#figma-file)
 5. [Personal Stretch Goals](#personal-stretch-goals)
-6. [What I Learned](#what-i-learned) <!-- You can add this later -->
 
 ---
 

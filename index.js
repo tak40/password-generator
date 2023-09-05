@@ -15,6 +15,7 @@ let includeSymbols = document.getElementById("symbols");
 
 let inputRange = document.getElementById('pwd-length-bar');
 let passwordLength = document.querySelector('.pwd-length');
+
 inputRange.addEventListener('input', function() {
   passwordLength.textContent = 'Password Length: ' + inputRange.value;
 });
@@ -39,25 +40,59 @@ generateBtn.addEventListener("click", function() {
     }
 })
 
-document.getElementById("copy-password-one").addEventListener("click", function() {
-  let password = document.getElementById("password-one").innerText;
-  let textArea = document.createElement("textarea");
-  textArea.value = password;
-  document.body.appendChild(textArea);
-  textArea.select();
-  document.execCommand("copy");
-  document.body.removeChild(textArea);
-});
+function copyToClipboard(password, tooltipId) {
+  navigator.clipboard.writeText(password).then(function() {
+    const tooltip = document.getElementById(tooltipId)
+    tooltip.style.visibility = "visible"
+    setTimeout(() => {
+      tooltip.style.visibility = "hidden"
+    }, 2000);
+  }).catch(function(err) {
+    console.error('Unable to copy password', err)
+  })
+}
 
-document.getElementById("copy-password-two").addEventListener("click", function() {
-  let password = document.getElementById("password-two").innerText;
-  let textArea = document.createElement("textarea");
-  textArea.value = password;
-  document.body.appendChild(textArea);
-  textArea.select();
-  document.execCommand("copy");
-  document.body.removeChild(textArea);
-});
+function addCopyPasswordListener(buttonId, passwordId, tooltipId) {
+  document.getElementById(buttonId).addEventListener("click", function() {
+    let password = document.getElementById(passwordId).innerText
+    const tooltip = document.getElementById(tooltipId)
+    if (password && password.trim() !== "") {
+      tooltip.innerText = 'Copied!'
+      copyToClipboard(password, tooltipId)
+    } else {
+      tooltip.innerText = 'Nothing to copy!'
+      tooltip.style.visibility = "visible"
+      setTimeout(() => {
+        tooltip.style.visibility = "hidden"
+      }, 2000);
+    }
+  })
+}
+
+
+addCopyPasswordListener("copy-password-one", "password-one", "tooltip-one")
+addCopyPasswordListener("copy-password-two", "password-two", "tooltip-two")
+
+
+// document.getElementById("copy-password-one").addEventListener("click", function() {
+//   let password = document.getElementById("password-one").innerText;
+//   let textArea = document.createElement("textarea");
+//   textArea.value = password;
+//   document.body.appendChild(textArea);
+//   textArea.select();
+//   document.execCommand("copy");
+//   document.body.removeChild(textArea);
+// });
+
+// document.getElementById("copy-password-two").addEventListener("click", function() {
+//   let password = document.getElementById("password-two").innerText;
+//   let textArea = document.createElement("textarea");
+//   textArea.value = password;
+//   document.body.appendChild(textArea);
+//   textArea.select();
+//   document.execCommand("copy");
+//   document.body.removeChild(textArea);
+// });
 
 
 // TOGGLE SWITCH FOR DARK MODE
@@ -73,4 +108,6 @@ toggleSwitch.addEventListener('change', function() {
       document.body.classList.remove('light-theme')
   }
 })
+
+// COPY TO CLIPBOARD
 

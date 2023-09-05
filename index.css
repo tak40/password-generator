@@ -202,6 +202,7 @@ span {
 }
 
 .result-container {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -258,6 +259,17 @@ span {
     outline: 2px solid #007BFF;
     border-radius: 5px;
     outline-offset: 2px;
+}
+
+.tooltip {
+    width: 150px;
+    text-align: right;
+    position: absolute;
+    top: -100%;  
+    left: 62.5%; 
+    transform: translateX(-50%);
+    visibility: hidden;
+    white-space: nowrap;
 }
 
 /* ----- FOOTER ----- */
@@ -335,7 +347,14 @@ footer {
     color: #5DEF92;
 }
 
+.light-theme .tooltip {
+    color: #6B7280;
+}
+
 /* Enables smooth transitions for theme switching */
 body, h1, span, .sub-title, .numbers, .symbols, .pwd-length, h4, #border, .result-container {
     transition: all 0.3s ease-in-out;
 }
+
+
+
