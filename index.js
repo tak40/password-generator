@@ -6,15 +6,15 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 const symbols = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",                  ","|",":",";","<",">",".","?", "/"];
 const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-let generateBtn = document.getElementById("btn")
-let passwordOne = document.getElementById("password-one")
-let passwordTwo = document.getElementById("password-two")
-let passwordLengthBar = document.getElementById("pwd-length-bar")
-let includeNumbers = document.getElementById("numbers");
-let includeSymbols = document.getElementById("symbols");
+let generateBtn = document.getElementById("generate-btn")
+let passwordOne = document.getElementById("pwd-display__pwd-one")
+let passwordTwo = document.getElementById("pwd-display__pwd-two")
+let passwordLengthSlider = document.getElementById("pwd-settings__length-slider")
+let includeNumbers = document.getElementById("include-numbers");
+let includeSymbols = document.getElementById("include-symbols");
 
-let inputRange = document.getElementById('pwd-length-bar');
-let passwordLength = document.querySelector('.pwd-length');
+let inputRange = document.getElementById('pwd-settings__length-slider');
+let passwordLength = document.querySelector('.pwd-settings__length-label');
 
 inputRange.addEventListener('input', function() {
   passwordLength.textContent = 'Password Length: ' + inputRange.value;
@@ -30,7 +30,7 @@ generateBtn.addEventListener("click", function() {
     let pw1 = ''
     let pw2 = ''
 
-    for (let i = 0; i < passwordLengthBar.value; i++) {
+    for (let i = 0; i < passwordLengthSlider.value; i++) {
         let randomCharactersOne = Math.floor(Math.random() * password.length)
         let randomCharactersTwo = Math.floor(Math.random() * password.length)
         pw1 += password[randomCharactersOne]
@@ -70,8 +70,8 @@ function addCopyPasswordListener(buttonId, passwordId, tooltipId) {
 }
 
 
-addCopyPasswordListener("copy-password-one", "password-one", "tooltip-one")
-addCopyPasswordListener("copy-password-two", "password-two", "tooltip-two")
+addCopyPasswordListener("pwd-display__copy-pwd-one", "pwd-display__pwd-one", "pwd-display__tooltip-one")
+addCopyPasswordListener("pwd-display__copy-pwd-two", "pwd-display__pwd-two", "pwd-display__tooltip-two")
 
 
 // document.getElementById("copy-password-one").addEventListener("click", function() {
@@ -108,6 +108,3 @@ toggleSwitch.addEventListener('change', function() {
       document.body.classList.remove('light-theme')
   }
 })
-
-// COPY TO CLIPBOARD
-
