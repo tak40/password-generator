@@ -13,53 +13,49 @@
     </head>
     <body>
         <header>
-            <div class="toggle-switch-container">
-                <input id="toggle-switch" type="checkbox"/>
-                <label for="toggle-switch" class="toggle"></label>
-            </div>
+            <nav class="toggle">
+                <input id="toggle-switch" type="checkbox" class="toggle__input"/>
+                <label for="toggle-switch" class="toggle__label"></label>
+            </nav>
         </header>
         <main>
-            <div class="title">
-                <h1>
-                    Generate a <span>random password</span>
-                </h1>
-                <p id="sub-title" class="sub-title">Never use an insecure password again.</p>
-            </div>
-            <div class="btn-selecter-container">
-                <div class="btn-container">
-                    <button id="btn">Generate Password</button>
-                </div>
-                <div class="setting-container">
-                    <div class="setting">
-                        <p class="pwd-length">Password Length</p>
-                        <input id="pwd-length-bar" class="pwd-length-bar" type="range" min="1" max="20" value="15" step="1">
+            <section class="pwd-header">
+                <h1 class="pwd-header__title">Generate a <span>random password</span></h1>
+                <p class="pwd-header__subtitle">Never use an insecure password again.</p>
+            </section>
+            <section class="pwd-controls">
+                <button id="generate-btn" class="pwd-controls__btn">Generate Password</button>
+                <fieldset class="pwd-settings">
+                    <div class="pwd-settings__length">
+                        <label class="pwd-settings__length-label" for="pwd-settings__length-slider">Password Length</label>
+                        <input id="pwd-settings__length-slider" class="pwd-settings__length-slider" type="range" min="1" max="20" value="15" step="1">
                     </div>
-                    <div class="setting setting-numbers">
-                        <label class="numbers" for="numbers">Include numbers</label>
-                        <input type="checkbox" id="numbers" class="checkbox" checked />
+                    <div class="pwd-settings__numbers">
+                        <label class="include-numbers" for="include-numbers">Include numbers</label>
+                        <input type="checkbox" id="include-numbers" class="pwd-settings__checkbox" checked />
                     </div>
-                    <div class="setting setting-symbols">
-                        <label class="symbols" for="symbols">Include symbols</label>
-                        <input type="checkbox" id="symbols" class="checkbox" checked />
+                    <div class="pwd-settings__symbols">
+                        <label class="include-symbols" for="include-symbols">Include symbols</label>
+                        <input type="checkbox" id="include-symbols" class="pwd-settings__checkbox" checked />
                     </div>
-                </div>
-            </div>
-            <div id="border">
-                <div class="result-container">
-                    <p id="tooltip-one" class="tooltip tooltip-one">Copied!</p>
-                    <p id="password-one"></p>
-                    <button id="copy-password-one" class="copy-btn">
+                </fieldset>
+            </section>
+            <section class="pwd-display">
+                <article class="pwd-display__container">
+                    <p id="pwd-display__tooltip-one" class="pwd-display__tooltip">Copied!</p>
+                    <p id="pwd-display__pwd-one" class="pwd-display__pwd-one"></p>
+                    <button id="pwd-display__copy-pwd-one" class="pwd-display__copy-pwd-one">
                         <span class="material-symbols-rounded">&#xE14D;</span>
                     </button>
-                </div>
-                <div class="result-container">
-                    <p id="tooltip-two" class="tooltip tooltip-two">Copied!</p>
-                    <p id="password-two"></p>
-                    <button id="copy-password-two" class="copy-btn">
+                </article>
+                <article class="pwd-display__container">
+                    <p id="pwd-display__tooltip-two" class="pwd-display__tooltip">Copied!</p>
+                    <p id="pwd-display__pwd-two" class="pwd-display__pwd-two"></p>
+                    <button id="pwd-display__copy-pwd-two" class="pwd-display__copy-pwd-two">
                         <span class="material-symbols-rounded">&#xE14D;</span>
                     </button>
-                </div>
-            </div>
+                </article>
+            </section>
         </main>
         <footer>
             <p>Developed by TK</p>
