@@ -1,57 +1,76 @@
-const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T",                    "U","V","W","X","Y","Z",
+// Define arrays for characters, numbers, and symbols
+const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
                     "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", 
-                    // "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
-                    // "~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?", "/"
-                    ];
-const symbols = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",                  ","|",":",";","<",">",".","?", "/"];
-const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+                  ]
+const symbols = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?", "/"]
+const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
-let generateBtn = document.getElementById("generate-btn")
-let passwordOne = document.getElementById("pwd-display__pwd-one")
-let passwordTwo = document.getElementById("pwd-display__pwd-two")
-let passwordLengthSlider = document.getElementById("pwd-settings__length-slider")
-let includeNumbers = document.getElementById("include-numbers");
-let includeSymbols = document.getElementById("include-symbols");
+// Get DOM elements related to password generation and display
+const generateBtn = document.getElementById("generate-btn")
+const passwordLengthSlider = document.getElementById("pwd-settings__length-slider")
+const includeNumbers = document.getElementById("include-numbers")
+const includeSymbols = document.getElementById("include-symbols")
+const passwordLength = document.getElementById('pwd-settings__length-label')
+const passwordOne = document.getElementById("pwd-display__pwd-one")
+const passwordTwo = document.getElementById("pwd-display__pwd-two")
 
-let inputRange = document.getElementById('pwd-settings__length-slider');
-let passwordLength = document.querySelector('.pwd-settings__length-label');
-
-inputRange.addEventListener('input', function() {
-  passwordLength.textContent = 'Password Length: ' + inputRange.value;
-});
-
-generateBtn.addEventListener("click", function() {
-    let password = characters;
-    if (includeNumbers.checked) password = [...password, ...numbers];
-    if (includeSymbols.checked) password = [...password, ...symbols];
-    passwordOne.textContent = "";
-    passwordTwo.textContent = "";
-
-    let pw1 = ''
-    let pw2 = ''
-
-    for (let i = 0; i < passwordLengthSlider.value; i++) {
-        let randomCharactersOne = Math.floor(Math.random() * password.length)
-        let randomCharactersTwo = Math.floor(Math.random() * password.length)
-        pw1 += password[randomCharactersOne]
-        pw2 += password[randomCharactersTwo]
-        passwordOne.textContent = pw1;
-        passwordTwo.textContent = pw2;
-    }
+// Update the label indicating password length based on slider value
+passwordLengthSlider.addEventListener('input', function() {
+  passwordLength.textContent = 'Password Length: ' + this.value;
 })
 
+// Function to generate a random password based on given array and length
+function generateRandomPassword(passwordArray, length) {
+  let generatedPassword = ''
+
+  // Loop 'length' times to add random characters to the password
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * passwordArray.length)
+    generatedPassword += passwordArray[randomIndex]
+  }
+  return generatedPassword
+}
+
+// Function executed when Generate button is clicked
+generateBtn.addEventListener("click", function() {
+  // Start with a basic character set
+  let passwordOptions = characters
+
+  // Include numbers if checked
+  if (includeNumbers.checked) passwordOptions = [...passwordOptions, ...numbers]
+
+  // Include symbols if checked
+  if (includeSymbols.checked) passwordOptions = [...passwordOptions, ...symbols]
+
+  if (passwordLengthSlider.value < 8) {
+    alert('Password length should be at least 8 characters.');
+    return;
+  }
+  
+
+  // Generate and display passwords
+  passwordOne.textContent = generateRandomPassword(passwordOptions, passwordLengthSlider.value)
+  passwordTwo.textContent = generateRandomPassword(passwordOptions, passwordLengthSlider.value)
+})
+
+// Function to handle clipboard operations
 function copyToClipboard(password, tooltipId) {
   navigator.clipboard.writeText(password).then(function() {
     const tooltip = document.getElementById(tooltipId)
     tooltip.style.visibility = "visible"
+
+    // Hide the tooltip after 2 seconds
     setTimeout(() => {
       tooltip.style.visibility = "hidden"
-    }, 2000);
-  }).catch(function(err) {
+    }, 2000)
+  }).catch(err => {
+    // Log and handle the error
     console.error('Unable to copy password', err)
+    alert('Something went wrong. Please try again.')
   })
 }
 
+// Function to add event listener for copying password to clipboard
 function addCopyPasswordListener(buttonId, passwordId, tooltipId) {
   document.getElementById(buttonId).addEventListener("click", function() {
     let password = document.getElementById(passwordId).innerText
@@ -64,41 +83,17 @@ function addCopyPasswordListener(buttonId, passwordId, tooltipId) {
       tooltip.style.visibility = "visible"
       setTimeout(() => {
         tooltip.style.visibility = "hidden"
-      }, 2000);
+      }, 2000)
     }
   })
 }
 
-
+// Attach copy listeners to buttons
 addCopyPasswordListener("pwd-display__copy-pwd-one", "pwd-display__pwd-one", "pwd-display__tooltip-one")
 addCopyPasswordListener("pwd-display__copy-pwd-two", "pwd-display__pwd-two", "pwd-display__tooltip-two")
 
-
-// document.getElementById("copy-password-one").addEventListener("click", function() {
-//   let password = document.getElementById("password-one").innerText;
-//   let textArea = document.createElement("textarea");
-//   textArea.value = password;
-//   document.body.appendChild(textArea);
-//   textArea.select();
-//   document.execCommand("copy");
-//   document.body.removeChild(textArea);
-// });
-
-// document.getElementById("copy-password-two").addEventListener("click", function() {
-//   let password = document.getElementById("password-two").innerText;
-//   let textArea = document.createElement("textarea");
-//   textArea.value = password;
-//   document.body.appendChild(textArea);
-//   textArea.select();
-//   document.execCommand("copy");
-//   document.body.removeChild(textArea);
-// });
-
-
-// TOGGLE SWITCH FOR DARK MODE
-
+// Toggle switch for dark mode
 const toggleSwitch = document.getElementById('toggle-switch')
-
 toggleSwitch.addEventListener('change', function() {
   if (toggleSwitch.checked) {
       document.body.classList.add('light-theme')
