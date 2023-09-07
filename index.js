@@ -46,7 +46,6 @@ generateBtn.addEventListener("click", function() {
     alert('Password length should be at least 8 characters.');
     return;
   }
-  
 
   // Generate and display passwords
   passwordOne.textContent = generateRandomPassword(passwordOptions, passwordLengthSlider.value)
