@@ -10,7 +10,7 @@ const generateBtn = document.getElementById("generate-btn")
 const passwordLengthSlider = document.getElementById("pwd-settings__length-slider")
 const includeNumbers = document.getElementById("include-numbers")
 const includeSymbols = document.getElementById("include-symbols")
-const passwordLength = document.getElementById('pwd-settings__length-label')
+const passwordLength = document.getElementById("pwd-settings__length-label")
 const passwordOne = document.getElementById("pwd-display__pwd-one")
 const passwordTwo = document.getElementById("pwd-display__pwd-two")
 
