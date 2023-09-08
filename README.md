@@ -34,6 +34,7 @@ This is a solo project as part of the Scrimba Frontend Career Path Module 3. The
 ## Screenshots
 
 ![Desktop View](assets/desktop.png)
+
 ![Mobile View](assets/mobile.png)
 
 ---
