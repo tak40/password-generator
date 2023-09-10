@@ -307,6 +307,14 @@ span,
     transition: all 0.3s ease-in-out;
 }
 
+/* 
+   Adjusts the tap highlight color for touch devices. This provides clearer visual feedback 
+   when elements are tapped, especially on iOS devices.
+*/
+
+button {
+    -webkit-tap-highlight-color: rgba(16, 185, 129, 0.5);
+}
 
 
 /* ... DESKTOP ... */
