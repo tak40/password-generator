@@ -13,12 +13,13 @@ body {
     cursor: default;
     font-family: 'Inter', sans-serif;
     background-color: #1F2937;
-    height: 100vh;
+    height: auto;
     width: 100vw;
     padding: 0 45px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    outline: dotted blue
 }
 
 /* ----- HEADER ----- */
@@ -237,14 +238,10 @@ fieldset {
 footer {
     font-family: 'Pacifico', cursive;
     font-size: 1rem;
-    margin-top: 1.125rem;
     text-align: center;
     color: #c29861;
-}
-
-footer p {
-    margin-top: 1.25rem;
-    margin-bottom: -1.25rem
+    /* outline: dotted red; */
+    margin: 3.5em 0;
 }
 
 /* ----- DARK MODE ----- */
@@ -508,6 +505,10 @@ button {
     .pwd-display__tooltip {
         height: 1.5em;
         margin-bottom: 0.5em;
+    }
+
+    footer {
+        margin: 3.5em 0 0 0;
     }
 
 }
