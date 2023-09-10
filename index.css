@@ -167,7 +167,10 @@ fieldset {
 .pwd-display__pwd-two {
     display: inline;
     text-align: center;
-    font-size: 1.75rem;
+    font-size: 1.35rem;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .pwd-display__copy-pwd-one, 
