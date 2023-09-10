@@ -61,11 +61,6 @@ span {
 }
 
 /* ----- PASSWORD GENERATOR CONTROLS ----- */
-.pwd-settings__checkbox[type="checkbox"] {
-    -webkit-appearance: none;
-    appearance: none;
-}
-
 .pwd-controls {
     display: flex;
     flex-direction: column;
@@ -96,6 +91,7 @@ fieldset {
     margin-top: 1em;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     line-height: 1.6;
 }
 
@@ -106,7 +102,8 @@ fieldset {
 }
 
 .pwd-settings__checkbox {
-    width: 3em;
+    width: 2em;
+    height: 2em;
 }
 
 .pwd-settings__checkbox:hover {
