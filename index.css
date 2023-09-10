@@ -74,8 +74,9 @@ span {
     border-radius: 5px;
     padding: 1em 1.5em;
     font-size: 1.25rem;
-    margin: 1em 0;
+    margin: 1.5em 0;
     order: 2;
+    transition: transform 0.3s ease-in-out;
 }
 
 fieldset {
@@ -148,43 +149,53 @@ fieldset {
 }
 
 .pwd-display__container {
-    position: relative;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    margin-top: 40px;
-    padding-left: 10px;
-    color: #55F991;
-    background-color: #273549;
     border: none;
     border-radius: 5px;
     width: 100%;
+}
+
+.pwd-display__box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
     height: 4em;
-    text-align: center;
-    line-height: 39px;   
+    border-radius: 5px;
+    line-height: 2.5em;
+    padding-left: 1em;
+    color: #55F991;
+    background-color: #273549;
 }
 
 .pwd-display__pwd-one, 
 .pwd-display__pwd-two {
-    display: inline;
-    text-align: center;
-    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.35rem;
 }
 
 .pwd-display__copy-pwd-one, 
 .pwd-display__copy-pwd-two {
     background-color: #273549;
+    margin: 0.5em;
+    padding: 0 0.5em;
     border: none;
-    margin-right: 1em;
-}
-
-.pwd-controls__btn {
-    transition: transform 0.3s ease-in-out;
+    border-radius: 5px;
 }
 
 .pwd-controls__btn:hover {
     cursor: pointer;
     transform: scale(1.05);
+}
+
+.pwd-controls__btn:active,
+.pwd-controls__btn:focus {
+    outline: 2px solid lightskyblue;
+    border-radius: 5px;
+    outline-offset: 2px;
 }
 
 .pwd-display__copy-pwd-one:hover, 
@@ -202,20 +213,21 @@ fieldset {
 .pwd-controls__btn:focus, 
 .pwd-display__copy-pwd-one:focus, 
 .pwd-display__copy-pwd-two:focus  {
-    outline: 2px solid #007BFF;
+    outline: 2px solid lightskyblue;
     border-radius: 5px;
     outline-offset: 2px;
 }
 
 .pwd-display__tooltip {
-    width: 150px;
-    text-align: right;
-    position: absolute;
-    top: -60%;  
-    left: 80%; 
-    transform: translateX(-50%);
+    color: #55F991;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     visibility: hidden;
     white-space: nowrap;
+    padding-right: 0.5em;
+    width: 100%;
+    height: 3em;
 }
 
 /* ----- FOOTER ----- */
@@ -411,7 +423,7 @@ button {
     /* PASSWORD HEADER */
 
     .pwd-header {
-        margin: 2em 0;
+        margin: 1.5em 0;
     }
 
     /* ----- PASSWORD GENERATOR CONTROLS ----- */
@@ -478,6 +490,7 @@ button {
     .pwd-display__container {
         width: 211px;
         height: 39px;
+        margin: 0.5em 0;
     }
     
     .pwd-display__pwd-one, 
@@ -491,8 +504,8 @@ button {
     }
 
     .pwd-display__tooltip {
-        top: -100%;  
-        left: 62.5%; 
+        height: 1.5em;
+        margin-bottom: 0.5em;
     }
 
 }
