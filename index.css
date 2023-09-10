@@ -177,24 +177,25 @@ fieldset {
     margin-right: 1em;
 }
 
+.pwd-controls__btn {
+    transition: transform 0.3s ease-in-out;
+}
+
 .pwd-controls__btn:hover {
     cursor: pointer;
     transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
 }
 
 .pwd-display__copy-pwd-one:hover, 
 .pwd-display__copy-pwd-two:hover {
     cursor: pointer;
     transform: scale(1.15);
-    transition: transform 0.3s ease-in-out;
 }
 
 .pwd-controls__btn:active, 
 .pwd-display__copy-pwd-one:active, 
 .pwd-display__copy-pwd-two:active {
   transform: scale(0.95);
-  transition: transform 0.3s ease-in-out;
 }
 
 .pwd-controls__btn:focus, 
