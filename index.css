@@ -21,9 +21,7 @@ body {
     justify-content: flex-start;
 }
 
-/* ----- HEADER ----- */
-
-/* TOGGLE SWITCH */
+/* ----- TOGGLE SWITCH ----- */
 
 .toggle__input, 
 .toggle__label {
@@ -35,7 +33,7 @@ body {
 /* PASSWORD HEADER */
 
 .pwd-header {
-    margin: 4em 0 3em 0;
+    margin: 4em 0 3em;
 }
 
 .pwd-header__title {
@@ -87,8 +85,7 @@ fieldset {
     width: 100%;
 }
 
-.pwd-settings__numbers, 
-.pwd-settings__symbols {
+.pwd-settings__option {
     margin-top: 1em;
     display: flex;
     justify-content: space-between;
@@ -96,8 +93,7 @@ fieldset {
     line-height: 1.6;
 }
 
-.include-numbers, 
-.include-symbols {
+.pwd-settings__option-label {
     font-size: 1.25rem;
     color: #D5D4D8;
 }
@@ -107,15 +103,25 @@ fieldset {
     height: 2em;
 }
 
-.pwd-settings__checkbox:hover {
+.pwd-settings__checkbox:hover, 
+.pwd-settings__length-slider:hover,
+.pwd-controls__btn:hover, 
+.pwd-display__copy-btn:hover {
     cursor: pointer;
 }
 
-.pwd-settings__checkbox:active,
-.pwd-settings__checkbox:focus {
+
+.pwd-settings__checkbox:active, 
+.pwd-settings__checkbox:focus,
+.pwd-settings__length-slider:active,
+.pwd-settings__length-slider:focus,
+.pwd-controls__btn:active,
+.pwd-controls__btn:focus, 
+.pwd-display__copy-btn:active, 
+.pwd-display__copy-btn:focus {
     outline: 2px solid #c29861;
-    outline-offset: 2px;
     border-radius: 5px;
+    outline-offset: 2px;
 }
 
 .pwd-settings__length-label {
@@ -128,15 +134,8 @@ fieldset {
     margin-top: 1em;
 }
 
-.pwd-settings__length-slider:hover {
-    cursor: pointer;
-}
-
 .pwd-settings__length-slider:active,
 .pwd-settings__length-slider:focus {
-    outline: 2px solid #c29861;
-    border-radius: 5px;
-    outline-offset: 2px;
     transform: scale(1.1);
     transition: transform 0.3s ease-in-out;
 }
@@ -170,8 +169,7 @@ fieldset {
     background-color: #273549;
 }
 
-.pwd-display__pwd-one, 
-.pwd-display__pwd-two {
+.pwd-display__text {
     display: flex;
     align-items: center;
     white-space: nowrap;
@@ -179,8 +177,7 @@ fieldset {
     font-size: 1.35rem;
 }
 
-.pwd-display__copy-pwd-one, 
-.pwd-display__copy-pwd-two {
+.pwd-display__copy-btn {
     background-color: #273549;
     margin: 0.5em;
     padding: 0 0.5em;
@@ -189,35 +186,16 @@ fieldset {
 }
 
 .pwd-controls__btn:hover {
-    cursor: pointer;
     transform: scale(1.05);
 }
 
-.pwd-controls__btn:active,
-.pwd-controls__btn:focus {
-    outline: 2px solid lightskyblue;
-    border-radius: 5px;
-    outline-offset: 2px;
-}
-
-.pwd-display__copy-pwd-one:hover, 
-.pwd-display__copy-pwd-two:hover {
-    cursor: pointer;
+.pwd-display__copy-btn:hover {
     transform: scale(1.15);
 }
 
 .pwd-controls__btn:active, 
-.pwd-display__copy-pwd-one:active, 
-.pwd-display__copy-pwd-two:active {
+.pwd-display__copy-btn:active {
     transform: scale(0.95);
-}
-
-.pwd-controls__btn:focus, 
-.pwd-display__copy-pwd-one:focus, 
-.pwd-display__copy-pwd-two:focus  {
-    outline: 2px solid lightskyblue;
-    border-radius: 5px;
-    outline-offset: 2px;
 }
 
 .pwd-display__tooltip {
@@ -239,7 +217,6 @@ footer {
     font-size: 1rem;
     text-align: center;
     color: #c29861;
-    /* outline: dotted red; */
     margin: 3.5em 0;
 }
 
@@ -258,8 +235,7 @@ footer {
 }
 
 .dark-theme .pwd-header__subtitle,
-.dark-theme .include-numbers,
-.dark-theme .include-symbols,
+.dark-theme .pwd-settings__option-label,
 .dark-theme .pwd-settings__length-label {
     color: #D5D4D8;
 }
@@ -287,8 +263,7 @@ footer {
 }
 
 .light-theme .pwd-header__subtitle,
-.light-theme .include-numbers,
-.light-theme .include-symbols,
+.light-theme .pwd-settings__option-label,
 .light-theme .pwd-settings__length-label,
 .light-theme h4 {
     color: #6B7280;
@@ -311,8 +286,7 @@ body,
 .pwd-header__title, 
 span, 
 .pwd-header__subtitle, 
-.include-numbers, 
-.include-symbols, 
+.pwd-settings__option-label
 .pwd-settings__length-label, 
 .pwd-display, 
 .pwd-display__container {
@@ -399,14 +373,11 @@ button {
     }
 
     /* Focus and active states */
-    .toggle__label:focus {
-        outline: 2px solid #007BFF;
-        border-radius: 5px;
-        outline-offset: 2px;
-    }
-
+    .toggle__label:focus,
     .toggle__label:active {
         outline: 2px solid #007BFF;
+        border-radius: 25px;
+        outline-offset: 2px;
     }
 
     .toggle__label:active::after {
@@ -434,10 +405,6 @@ button {
         margin-bottom: 1em;
     }
 
-    .pwd-controls__btn {
-        order: 1;
-    }
-
     .pwd-settings {
         order: 2;
     }
@@ -451,19 +418,16 @@ button {
         padding: 10px 15px;
         font-size: 1rem;
         margin-bottom: 10px;
-        order: 2;
     }
 
-    .pwd-settings__numbers, 
-    .pwd-settings__symbols {
+    .pwd-settings__option {
         margin-top: 0.25em;
         display: flex;
         justify-content: space-between;
         line-height: 1.6;
     }
 
-    .include-numbers, 
-    .include-symbols {
+    .pwd-settings__option-label {
         font-size: 1rem;
     }
 
@@ -491,13 +455,11 @@ button {
         margin: 0.5em 0;
     }
     
-    .pwd-display__pwd-one, 
-    .pwd-display__pwd-two {
+    .pwd-display__text {
         font-size: 14.1px;
     }
     
-    .pwd-display__copy-pwd-one, 
-    .pwd-display__copy-pwd-two {
+    .pwd-display__copy-btn {
         margin-right: 5px;
     }
 
@@ -507,7 +469,7 @@ button {
     }
 
     footer {
-        margin: 4em 0 -2em 0;
+        margin: 4em 0 -2em;
         font-size: 0.85rem;
     }
 

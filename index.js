@@ -7,12 +7,12 @@ const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 // Get DOM elements related to password generation and display
 const generateBtn = document.getElementById("generate-btn")
-const passwordLengthSlider = document.getElementById("pwd-settings__length-slider")
+const passwordLengthSlider = document.getElementById("pwd-length-slider")
 const includeNumbers = document.getElementById("include-numbers")
 const includeSymbols = document.getElementById("include-symbols")
-const passwordLength = document.getElementById("pwd-settings__length-label")
-const passwordOne = document.getElementById("pwd-display__pwd-one")
-const passwordTwo = document.getElementById("pwd-display__pwd-two")
+const passwordLength = document.getElementById("pwd-length-label")
+const passwordOne = document.getElementById("pwd-text-one")
+const passwordTwo = document.getElementById("pwd-text-two")
 
 // Update the label indicating password length based on slider value
 passwordLengthSlider.addEventListener('input', function() {
@@ -88,8 +88,8 @@ function addCopyPasswordListener(buttonId, passwordId, tooltipId) {
 }
 
 // Attach copy listeners to buttons
-addCopyPasswordListener("pwd-display__copy-pwd-one", "pwd-display__pwd-one", "pwd-display__tooltip-one")
-addCopyPasswordListener("pwd-display__copy-pwd-two", "pwd-display__pwd-two", "pwd-display__tooltip-two")
+addCopyPasswordListener("copy-pwd-one", "pwd-text-one", "pwd-tooltip-one")
+addCopyPasswordListener("copy-pwd-two", "pwd-text-two", "pwd-tooltip-two")
 
 // Toggle switch for dark mode
 const toggleSwitch = document.getElementById('toggle-switch')
