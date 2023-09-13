@@ -134,8 +134,7 @@ fieldset {
     margin-top: 1em;
 }
 
-.pwd-settings__length-slider:active,
-.pwd-settings__length-slider:focus {
+.pwd-settings__length-slider:active {
     transform: scale(1.1);
     transition: transform 0.3s ease-in-out;
 }
@@ -375,7 +374,7 @@ button {
     /* Focus and active states */
     .toggle__label:focus,
     .toggle__label:active {
-        outline: 2px solid #007BFF;
+        outline: 2px solid #c29861;
         border-radius: 25px;
         outline-offset: 2px;
     }
