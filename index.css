@@ -5,6 +5,7 @@
     /* outline: 0.5px dotted red */
 }
 
+
 html {
     background: grey;
 }
@@ -15,7 +16,7 @@ body {
     background-color: #1F2937;
     height: auto;
     width: 100vw;
-    padding: 0 45px;
+    padding: 0 2.8em;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -39,7 +40,7 @@ body {
 .pwd-header__title {
     font-family: 'Karla', sans-serif;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 2.5rem;
     line-height: 40px;
     color: #FFFFFF;
     margin: 0;
@@ -90,7 +91,6 @@ fieldset {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    line-height: 1.6;
 }
 
 .pwd-settings__option-label {
@@ -162,7 +162,6 @@ fieldset {
     width: 100%;
     height: 4em;
     border-radius: 5px;
-    line-height: 2.5em;
     padding-left: 1em;
     color: #55F991;
     background-color: #273549;
@@ -309,8 +308,8 @@ button {
         justify-content: center;
         width: 550px;
         height: 550px;
-        padding: 0 45px;
-        border-radius: 10px;
+        padding: 0 2.8em;
+        border-radius: 0.75rem;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -391,7 +390,7 @@ button {
     /* PASSWORD HEADER */
 
     .pwd-header {
-        margin: 1.5em 0;
+        margin-top: 1.5em;
     }
 
     /* ----- PASSWORD GENERATOR CONTROLS ----- */
