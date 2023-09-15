@@ -7,7 +7,7 @@
 
 
 html {
-    background: grey;
+    background: #C0C0C0;
 }
 
 body {
@@ -218,34 +218,6 @@ footer {
     margin: 3.5em 0;
 }
 
-/* ----- DARK MODE ----- */
-
-.dark-theme {
-    background-color: #1F2937;
-}
-
-.dark-theme .pwd-header__title {
-    color: #FFFFFF;
-}
-
-.dark-theme span {
-    color: #4ADF86;
-}
-
-.dark-theme .pwd-header__subtitle,
-.dark-theme .pwd-settings__option-label,
-.dark-theme .pwd-settings__length-label {
-    color: #D5D4D8;
-}
-
-.dark-theme .pwd-display {
-    border-top: 1px solid #c29861;
-}
-
-.dark-theme .pwd-display__container {
-    color: #55F991;
-}
-
 /* ----- LIGHT MODE ----- */
 
 .light-theme {
@@ -297,7 +269,7 @@ span,
 */
 
 button {
-    -webkit-tap-highlight-color: rgba(16, 185, 129, 0.5);
+    -webkit-tap-highlight-color: rgba(16, 185, 129, 0.5)
 }
 
 
