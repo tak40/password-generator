@@ -92,13 +92,8 @@ addCopyPasswordListener("copy-pwd-one", "pwd-text-one", "pwd-tooltip-one")
 addCopyPasswordListener("copy-pwd-two", "pwd-text-two", "pwd-tooltip-two")
 
 // Toggle switch for dark mode
-const toggleSwitch = document.getElementById('toggle-switch')
+const toggleSwitch = document.getElementById('toggle-switch');
 toggleSwitch.addEventListener('change', function() {
-  if (toggleSwitch.checked) {
-      document.body.classList.add('light-theme')
-      document.body.classList.remove('dark-theme')
-  } else {
-      document.body.classList.add('dark-theme')
-      document.body.classList.remove('light-theme')
-  }
-})
+  document.body.classList.toggle('light-theme');
+});
+
