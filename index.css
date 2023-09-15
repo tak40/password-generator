@@ -5,15 +5,45 @@
     /* outline: 0.5px dotted red */
 }
 
+:root {
+    /* Colors */
+    --gray-background: #C0C0C0;
+    --dark-background: #1F2937;
+    --text-white: #FFFFFF;
+    --text-muted: #D5D4D8;
+    --highlight-green: #4ADF86;
+    --btn-green: #10B981;
+    --outline-brown: #c29861;
+    --pwd-box-background: #273549;
+    --pwd-text-green: #55F991;
+    --footer-text: #c29861;
+
+    /* Light theme colors */
+    --light-background: #ECFDF5;
+    --light-header-text: #2B283A;
+    --light-subtitle-text: #6B7280;
+    --light-border: #2F3E53;
+    --light-pwd-green: #5DEF92;
+    
+    /* Desktop Toggle Switch Gradient Colors */
+    --toggle-off-start: #ffcc89;
+    --toggle-off-end: #d8860b;
+    --toggle-on-start: #777;
+    --toggle-on-end: #3a3a3a;
+
+    /* Other common values */
+    --transition-speed: 0.3s;
+}
+
 
 html {
-    background: #C0C0C0;
+    background: var(--gray-background);
 }
 
 body {
     cursor: default;
     font-family: 'Inter', sans-serif;
-    background-color: #1F2937;
+    background-color: var(--dark-background);
     height: auto;
     width: 100vw;
     padding: 0 2.8em;
@@ -42,12 +72,12 @@ body {
     font-weight: bold;
     font-size: 2.5rem;
     line-height: 40px;
-    color: #FFFFFF;
+    color: var(--text-white);
     margin: 0;
 }
 
 .pwd-header__subtitle {
-    color: #D5D4D8;
+    color: var(--text-muted);
     font-size: 20px;
     line-height: 28px;
     margin: 0;
@@ -55,7 +85,7 @@ body {
 }
 
 span {
-    color: #4ADF86;
+    color: var(--highlight-green);
     display: block;
 }
 
@@ -67,15 +97,15 @@ span {
 }
 
 .pwd-controls__btn {
-    background-color: #10B981;
-    color: #FFFFFF;
+    background-color: var(--btn-green);
+    color: var(--text-white);
     border: none;
     border-radius: 5px;
     padding: 1em 1.5em;
     font-size: 1.25rem;
     margin: 1.5em 0;
     order: 2;
-    transition: transform 0.3s ease-in-out;
+    transition: transform var(--transition-speed) ease-in-out;
 }
 
 fieldset {
@@ -95,7 +125,7 @@ fieldset {
 
 .pwd-settings__option-label {
     font-size: 1.25rem;
-    color: #D5D4D8;
+    color: var(--text-muted);
 }
 
 .pwd-settings__checkbox {
@@ -119,14 +149,14 @@ fieldset {
 .pwd-controls__btn:focus, 
 .pwd-display__copy-btn:active, 
 .pwd-display__copy-btn:focus {
-    outline: 2px solid #c29861;
+    outline: 2px solid var(--outline-brown);
     border-radius: 5px;
     outline-offset: 2px;
 }
 
 .pwd-settings__length-label {
     font-size: 1.25rem;
-    color: whitesmoke;
+    color: var(--text-muted);
 }
 
 .pwd-settings__length-slider {
@@ -136,11 +166,11 @@ fieldset {
 
 .pwd-settings__length-slider:active {
     transform: scale(1.1);
-    transition: transform 0.3s ease-in-out;
+    transition: transform var(--transition-speed) ease-in-out;
 }
 
 .pwd-display {
-    border-top: 1px solid #c29861;
+    border-top: 1px solid var(--outline-brown);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -163,8 +193,8 @@ fieldset {
     height: 4em;
     border-radius: 5px;
     padding-left: 1em;
-    color: #55F991;
-    background-color: #273549;
+    color: var(--pwd-text-green);
+    background-color: var(--pwd-box-background);
 }
 
 .pwd-display__text {
@@ -176,7 +206,7 @@ fieldset {
 }
 
 .pwd-display__copy-btn {
-    background-color: #273549;
+    background-color: var(--pwd-box-background);
     margin: 0.5em;
     padding: 0 0.5em;
     border: none;
@@ -197,7 +227,7 @@ fieldset {
 }
 
 .pwd-display__tooltip {
-    color: #55F991;
+    color: var(--pwd-text-green);
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -214,53 +244,53 @@ footer {
     font-family: 'Pacifico', cursive;
     font-size: 1rem;
     text-align: center;
-    color: #c29861;
+    color: var(--footer-text);
     margin: 3.5em 0;
 }
 
 /* ----- LIGHT MODE ----- */
 
 .light-theme {
-    background-color: #ECFDF5;
+    background-color: var(--light-background);
 }
 
 .light-theme h1 {
-    color: #2B283A;
+    color: var(--light-header-text);
 }
 
 .light-theme span {
-    color: #10B981;
+    color: var(--btn-green);
 }
 
 .light-theme .pwd-header__subtitle,
 .light-theme .pwd-settings__option-label,
 .light-theme .pwd-settings__length-label,
 .light-theme h4 {
-    color: #6B7280;
+    color: var(--light-subtitle-text);
 }
 
 .light-theme .pwd-display {
-    border-top: 1px solid #2F3E53;
+    border-top: 1px solid var(--light-border);
 }
 
 .light-theme .pwd-display__container {
-    color: #5DEF92;
+    color: var(--light-pwd-green);
 }
 
 .light-theme .pwd-display__tooltip {
-    color: #6B7280;
+    color: var(--light-subtitle-text);
 }
 
 /* Enables smooth transitions for theme switching */
 body, 
-.pwd-header__title, 
 span, 
+.pwd-header__title, 
 .pwd-header__subtitle, 
 .pwd-settings__option-label
 .pwd-settings__length-label, 
 .pwd-display, 
 .pwd-display__container {
-    transition: all 0.3s ease-in-out;
+    transition: all var(--transition-speed) ease-in-out;
 }
 
 /* 
@@ -305,10 +335,9 @@ button {
         right: 40px;
         width: 40px;
         height: 20px;
-        background: #ebebeb;
         border-radius: 25px;
         box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.4), inset 0 -5px 15px rgba(255, 255, 255, 0.4);
-        transition: background 0.3s ease-in-out;
+        transition: background var(--transition-speed) ease-in-out;
     }
 
     /* Inner circle */
@@ -319,10 +348,10 @@ button {
         left: 0;
         width: 20px;
         height: 20px;
-        background: linear-gradient(180deg, #ffcc89, #d8860b);
+        background: linear-gradient(180deg, var(--toggle-off-start), var(--toggle-off-end));
         border-radius: 50%;
         box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-        transition: left 0.3s ease-in-out, background 0.3s ease-in-out;
+        transition: left var(--transition-speed) ease-in-out, background var(--transition-speed) ease-in-out;
     }
 
     /* Toggle switch styles when checked */
@@ -332,20 +361,20 @@ button {
 
     .toggle__input:checked + .toggle__label::after {
         left: calc(100% - 20px);
-        background: linear-gradient(180deg, #777, #3a3a3a);
+        background: linear-gradient(180deg, var(--toggle-on-start), var(--toggle-on-end));
     }
 
     /* Hover states */
     .toggle__label:hover {
         cursor: pointer;
         transform: scale(1.25);
-        transition: transform 0.3s ease-in-out;
+        transition: transform var(--transition-speed) ease-in-out;
     }
 
     /* Focus and active states */
     .toggle__label:focus,
     .toggle__label:active {
-        outline: 2px solid #c29861;
+        outline: 2px solid var(--outline-brown);
         border-radius: 25px;
         outline-offset: 2px;
     }
@@ -414,7 +443,7 @@ button {
     }
 
     .pwd-display {
-        border-top: 1px solid #c29861;
+        border-top: 1px solid var(--outline-brown);
         flex-direction: row;
         justify-content: space-between;
     }
@@ -426,7 +455,7 @@ button {
     }
     
     .pwd-display__text {
-        font-size: 14.1px;
+        font-size: 0.88rem;
     }
     
     .pwd-display__copy-btn {
