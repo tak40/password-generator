@@ -16,7 +16,7 @@ A user-friendly web application to generate random passwords based on user prefe
 
 ## Overview
 
-This is a solo project as part of the Scrimba Frontend Career Path Module 3. The primary aim of the project is to create a Random Password Generator built on the foundation of vanilla JavaScript, HTML, and CSS
+This is a solo project as part of the Scrimba Frontend Career Path Module 3. The primary aim of the project is to create a Random Password Generator built on the foundation of vanilla JavaScript, HTML, and CSS.
 
 ---
 
